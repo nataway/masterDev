@@ -52,7 +52,7 @@ public class baitap {
 //    m4
     public static boolean checkSNT(int num){
         if (num > 3){
-            if (num % 2 == 0 | num % 3 == 0){
+            if (num % 2 == 0 || num % 3 == 0){
                 return false;
             }
         }
@@ -61,7 +61,7 @@ public class baitap {
         }
         int i = 5;
         while (i * i <= num){
-            if (num % i == 0 | num %(i+2) == 0){
+            if (num % i == 0 || num %(i+2) == 0){
                 return false;
             }
             i+=6;
