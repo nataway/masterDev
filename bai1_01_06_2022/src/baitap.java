@@ -115,12 +115,14 @@ public class baitap {
                     System.out.println("sum = " + sumList(a));
                     break;
                 case 2:
-                    maxChar("asdfggffffff");
+                    maxChar("dddffrfgwer");
                     break;
                 case 3:
                     int [] b = {1,2,100,4};
+                    System.out.println("mang truoc khi sa xep");
+                    show(b);
                     sortASC(b);
-                    System.out.println("mang sau khi saw xep");
+                    System.out.println("mang sau khi sa xep");
                     show(b);
                     break;
                 case 4:
