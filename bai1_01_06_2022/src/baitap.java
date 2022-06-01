@@ -77,12 +77,8 @@ public class baitap {
         }
     }
 //    m6
-    public static void m6 () {
+    public static void m6 (int rad) {
         double dis;
-        int rad;
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Eradius= ");
-        rad = sc.nextInt();
         for (int row = 0; row <= 2 * rad; row++) {
             for (int col = 0; col <= 2 * rad; col++) {
                 dis = Math.sqrt((row - rad) * (row - rad) + (col - rad) * (col - rad));
@@ -130,13 +126,17 @@ public class baitap {
                     break;
                 case 5:
                     try {
-                        dtTamGiac(3,4,5);
+                        dtTamGiac(0,0,0);
                     } catch (MyException me) {
                         System.out.println("Loi: " + me);
                     }
                     break;
                 case 6:
-                    m6();
+
+                    Scanner sc2 = new Scanner(System.in);
+                    System.out.print("Eradius= ");
+                    int rad = sc2.nextInt();
+                    m6(rad);
                     break;
                 case 7:
                     t = false;
