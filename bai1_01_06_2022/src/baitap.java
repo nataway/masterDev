@@ -10,17 +10,17 @@ public class baitap {
     }
 //    m2
     public static void maxChar (String s){
-        HashMap<Character, Integer> hash_map = new HashMap<Character, Integer>();
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
         for (Character i : s.toCharArray()){
-            if (hash_map.containsKey(i)){
-                hash_map.put(i, hash_map.get(i)+1);
+            if (map.containsKey(i)){
+                map.put(i, map.get(i)+1);
             }else {
-                hash_map.put(i,1);
+                map.put(i,1);
             }
         }
-        int maxValueInMap=(Collections.max(hash_map.values()));
+        int maxValueInMap=(Collections.max(map.values()));
         System.out.println("max = " + maxValueInMap);
-        hash_map.forEach((key, value) -> {
+        map.forEach((key, value) -> {
             if (value == maxValueInMap){
                 System.out.println("ky tu "+ key);
             }
@@ -68,12 +68,12 @@ public class baitap {
         return true;
     }
 //    m5
-    public static String dtTamGiac(int a, int b, int c){
-        if (a+b <= c | a+c <= b | c+b <=c){
-            return "Do dai 3 cach ko hop le";
+    public static void dtTamGiac(int a, int b, int c) throws MyException{
+        if(a+b <= c | a+c <= b | c+b <=a ){
+            throw new MyException(a,b,c);
         }
         else {
-            return String.format("Dien Tich = %.2f",(double)a*b*c/2);
+            System.out.println(String.format("Dien Tich = %.2f",(float)a*b*c/2));
         }
     }
 //    m6
@@ -113,10 +113,9 @@ public class baitap {
                 case 1:
                     int [] a = {1,2,100,4};
                     System.out.println("sum = " + sumList(a));
-
                     break;
                 case 2:
-                    maxChar("asdfggf");
+                    maxChar("asdfggffffff");
                     break;
                 case 3:
                     int [] b = {1,2,100,4};
@@ -128,7 +127,11 @@ public class baitap {
                     System.out.println(checkSNT(9));
                     break;
                 case 5:
-                    System.out.println(dtTamGiac(3,4,1));
+                    try {
+                        dtTamGiac(3,4,5);
+                    } catch (MyException me) {
+                        System.out.println("Loi: " + me);
+                    }
                     break;
                 case 6:
                     m6();
