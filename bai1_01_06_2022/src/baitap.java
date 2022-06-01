@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class baitap {
-    public static int sumList(int[] a){
+    public static int sumList(List<Integer> a){
         int sum = 0;
         for (int i : a){
             sum+=i;
@@ -22,9 +22,10 @@ public class baitap {
         System.out.println("max = " + maxValueInMap);
         map.forEach((key, value) -> {
             if (value == maxValueInMap){
-                System.out.println("ky tu "+ key);
+                System.out.printf("ky tu '%s'",key);
             }
         });
+        System.out.println();
 
     }
 // m3
@@ -107,16 +108,31 @@ public class baitap {
             Scanner sc = new Scanner(System.in);
             System.out.print("select : ");
             number = sc.nextInt();
+            String S = sc.nextLine();
             switch (number){
                 case 1:
-                    int [] a = {1,2,100,4};
+                    System.out.print("Nhap so phan tu mang: ");
+                    int n = sc.nextInt();
+                    List<Integer> a = new ArrayList<>();
+                    for (int i = 0; i < n; i++){
+                        System.out.print("nhap phan tu "+ (i+1) + ": ");
+                        a.add(sc.nextInt());
+                    }
                     System.out.println("sum = " + sumList(a));
                     break;
                 case 2:
-                    maxChar("dddffrfgwer");
+                    System.out.print("nhap chuoi : ");
+                    S = sc.nextLine();
+                    maxChar(S);
                     break;
                 case 3:
-                    int [] b = {1,2,100,4};
+                    System.out.print("Nhap so phan tu mang: ");
+                    n = sc.nextInt();
+                    int [] b = new int[n];
+                    for (int i = 0; i < n; i++){
+                        System.out.print("nhap phan tu "+ (i+1) + ": ");
+                        b[i] = sc.nextInt();
+                    }
                     System.out.println("mang truoc khi sa xep");
                     show(b);
                     sortASC(b);
@@ -128,33 +144,26 @@ public class baitap {
                     break;
                 case 5:
                     try {
-                        Scanner A = new Scanner(System.in);
                         System.out.print("Nhap canh 1: ");
-                        int c1 = A.nextInt();
-                        Scanner B = new Scanner(System.in);
+                        int c1 = sc.nextInt();
                         System.out.print("Nhap canh 2: ");
-                        int c2 = B.nextInt();
-                        Scanner C = new Scanner(System.in);
+                        int c2 = sc.nextInt();
                         System.out.print("Nhap canh 3 :");
-                        int c3 = C.nextInt();
+                        int c3 = sc.nextInt();
                         try {
                             dtTamGiac(c1,c2,c3);
                         }catch (MyException me){
                             System.out.println("Loi: "+ me);
                         }
-//                        A.close();
-//                        B.close();
-//                        C.close();
+
                     } catch (Exception e) {
                         System.out.println("Loi: " + e);
                     }
                     break;
                 case 6:
-                    Scanner sc2 = new Scanner(System.in);
                     System.out.print("Eradius= ");
-                    int rad = sc2.nextInt();
+                    int rad = sc.nextInt();
                     m6(rad);
-                    sc2.close();
                     break;
                 case 7:
                     t = false;
