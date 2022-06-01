@@ -50,6 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-bai1_01_06_2022/out/
+**out/
 
 
