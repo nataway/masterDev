@@ -74,7 +74,7 @@ public class baitap {
             throw new MyException(a,b,c);
         }
         else {
-            float p = (a+b+c)/2;
+            float p = (float)(a+b+c)/2;
             float dt = (float) Math.sqrt(p*(p-a)*(p-b)*(p-c));
             System.out.println(String.format("Dien Tich = %.2f",dt));
         }
