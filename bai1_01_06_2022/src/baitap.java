@@ -69,11 +69,13 @@ public class baitap {
     }
 //    m5
     public static void dtTamGiac(int a, int b, int c) throws MyException{
-        if(a+b <= c | a+c <= b | c+b <=a ){
+        if(a+b <= c || a+c <= b || c+b <=a ){
             throw new MyException(a,b,c);
         }
         else {
-            System.out.println(String.format("Dien Tich = %.2f",(float)a*b*c/2));
+            float p = (a+b+c)/2;
+            float dt = (float) Math.sqrt(p*(p-a)*(p-b)*(p-c));
+            System.out.println(String.format("Dien Tich = %.2f",dt));
         }
     }
 //    m6
@@ -126,25 +128,43 @@ public class baitap {
                     break;
                 case 5:
                     try {
-                        dtTamGiac(0,0,0);
-                    } catch (MyException me) {
-                        System.out.println("Loi: " + me);
+                        Scanner A = new Scanner(System.in);
+                        System.out.print("Nhap canh 1: ");
+                        int c1 = A.nextInt();
+                        Scanner B = new Scanner(System.in);
+                        System.out.print("Nhap canh 2: ");
+                        int c2 = B.nextInt();
+                        Scanner C = new Scanner(System.in);
+                        System.out.print("Nhap canh 3 :");
+                        int c3 = C.nextInt();
+                        try {
+                            dtTamGiac(c1,c2,c3);
+                        }catch (MyException me){
+                            System.out.println("Loi: "+ me);
+                        }
+//                        A.close();
+//                        B.close();
+//                        C.close();
+                    } catch (Exception e) {
+                        System.out.println("Loi: " + e);
                     }
                     break;
                 case 6:
-
                     Scanner sc2 = new Scanner(System.in);
                     System.out.print("Eradius= ");
                     int rad = sc2.nextInt();
                     m6(rad);
+                    sc2.close();
                     break;
                 case 7:
                     t = false;
                     break;
                 default:
             }
+//            sc.close();
 
         }
+
 
     }
 }
