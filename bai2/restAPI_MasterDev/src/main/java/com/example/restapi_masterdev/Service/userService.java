@@ -13,7 +13,4 @@ public interface userService extends Service {
     String addUser(User u);
     String deleteUser(int id);
     String updateUser(int id, User user);
-
-
-
 }

@@ -1,6 +1,6 @@
 package com.example.restapi_masterdev.Controller;
 
-import com.example.restapi_masterdev.Implement.userImplement;
+import com.example.restapi_masterdev.Service.Implement.userImplement;
 import com.example.restapi_masterdev.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ public class userController {
     public ResponseEntity<User> find(@PathVariable("id") int id){
         return new ResponseEntity<>(userservice.findById(id), HttpStatus.OK);
     }
-    @GetMapping("/allAvailable")
+    @GetMapping("/all")
     public ResponseEntity<List<User>> getAll(){
         List<User> users = userservice.getAll();
         return new  ResponseEntity<>(users, HttpStatus.OK);
