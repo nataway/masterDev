@@ -55,38 +55,12 @@ public class userImplement implements userService {
         return false;
     }
     @Override
-    public boolean checkPassword(String password) {
-
-        if(password.length()>=8)
-        {
-            Pattern letter = Pattern.compile("[a-zA-z]");
-            Pattern digit = Pattern.compile("[0-9]");
-            Pattern special = Pattern.compile ("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
-            //Pattern eight = Pattern.compile (".{8}");
-            Matcher hasLetter = letter.matcher(password);
-            Matcher hasDigit = digit.matcher(password);
-            Matcher hasSpecial = special.matcher(password);
-            System.out.println(hasLetter.find());
-            System.out.println(hasDigit.find());
-            System.out.println(hasSpecial.find());
-
-
-            return hasLetter.find() && hasDigit.find() && hasSpecial.find();
-
-        }
-        else
-            return false;
-
-    }
-    @Override
     public String addUser(User user) throws DuplicateRecordException {
         if (Objects.equals(user.getPassword(), "") || Objects.equals(user.getEmail(), "")){
             return "error";
         }
         else if (this.checkEmail(user.getEmail())){
             return "Email already exist";
-        } else if (this.checkPassword(user.getPassword())) {
-            return "Invalid password";
         }
         else {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -109,7 +83,7 @@ public class userImplement implements userService {
     @Override
     public String updateUser(int id, User user) {
         User u = this.findById(id);
-        if (u.getEmail()==user.getEmail() && this.checkPassword(user.getPassword())){
+        if (Objects.equals(u.getEmail(), user.getEmail())){
             u.setEmail(user.getEmail());
             u.setPassword(passwordEncoder.encode(user.getPassword()));
             this.userRepo.save(u);
