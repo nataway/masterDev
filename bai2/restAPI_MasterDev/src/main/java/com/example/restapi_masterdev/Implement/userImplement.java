@@ -41,6 +41,7 @@ public class userImplement implements userService {
         }
     }
     @Override
+//    check mail xem đã tồn tại trong csdl chưa
     public Boolean checkEmail(String email){
         List<User> listUser = this.userRepo.findAll();
         if (listUser.isEmpty()){
@@ -65,6 +66,10 @@ public class userImplement implements userService {
             Matcher hasLetter = letter.matcher(password);
             Matcher hasDigit = digit.matcher(password);
             Matcher hasSpecial = special.matcher(password);
+            System.out.println(hasLetter.find());
+            System.out.println(hasDigit.find());
+            System.out.println(hasSpecial.find());
+
 
             return hasLetter.find() && hasDigit.find() && hasSpecial.find();
 
@@ -75,7 +80,10 @@ public class userImplement implements userService {
     }
     @Override
     public String addUser(User user) throws DuplicateRecordException {
-        if (this.checkEmail(user.getEmail())){
+        if (Objects.equals(user.getPassword(), "") || Objects.equals(user.getEmail(), "")){
+            return "error";
+        }
+        else if (this.checkEmail(user.getEmail())){
             return "Email already exist";
         } else if (this.checkPassword(user.getPassword())) {
             return "Invalid password";
@@ -107,6 +115,6 @@ public class userImplement implements userService {
             this.userRepo.save(u);
             return "update susses";
         }
-        return "errol!";
+        return "error!";
     }
 }

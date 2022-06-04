@@ -1,4 +1,4 @@
-//package com.example.restapi_masterdev.Security;
-//
-//public class BCrypt {
-//}
+package com.example.restapi_masterdev.Security;
+
+public class BCrypt {
+}

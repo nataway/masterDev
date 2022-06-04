@@ -19,14 +19,14 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
-    <beans>
+<!--    <beans>-->
 
-        <import resource="employee.xml"/>
-        <import resource="department.xml"/>
+<!--        <import resource="employee.xml"/>-->
+<!--        <import resource="department.xml"/>-->
 
-        <bean id="operations" class="com.howtodoinjava.spring.beans.Operations"></bean>
+<!--        <bean id="operations" class="com.howtodoinjava.spring.beans.Operations"></bean>-->
 
-    </beans>
+<!--    </beans>-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

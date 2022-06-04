@@ -4,19 +4,20 @@
 //
 //import lombok.extern.java.Log;
 //import org.apache.commons.logging.LogFactory;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 //
 //import java.security.SecureRandom;
 //import java.util.regex.Matcher;
 //import java.util.regex.Pattern;
 //
-//public class BCryptPasswordEncoder implements PasswordEncoder{
+//public class BCryptPasswordEncoder implements PasswordEncoder {
 //    private Pattern BCRYPT_PATTERN = Pattern.compile("\\A\\$2(a|y|b)?\\$(\\d\\d)\\$[./0-9A-Za-z]{53}");
 //
 //    private final Log logger = LogFactory.getLog(getClass());
 //
 //    private final int strength;
 //
-//    private final BCryptPasswordEncoder.BCryptVersion version;
+//    private final BCryptVersion version;
 //
 //    private final SecureRandom random;
 //
@@ -68,7 +69,7 @@
 //     * @param random the secure random instance to use
 //     */
 //    public BCryptPasswordEncoder(org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder.BCryptVersion version, int strength, SecureRandom random) {
-//        if (strength != -1 && (strength < org.springframework.security.crypto.bcrypt.BCrypt.MIN_LOG_ROUNDS || strength > org.springframework.security.crypto.bcrypt.BCrypt.MAX_LOG_ROUNDS)) {
+//        if (strength != -1 && (strength < BCrypt.MIN_LOG_ROUNDS || strength > org.springframework.security.crypto.bcrypt.BCrypt.MAX_LOG_ROUNDS)) {
 //            throw new IllegalArgumentException("Bad strength");
 //        }
 //        this.version = version;
