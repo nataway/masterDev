@@ -1,17 +1,15 @@
 import java.util.*;
 import javafx.util.Pair;
 
-public class baitap {
-    public static int sumList(List<Integer> a){
-        int sum = 0;
-        for (int i : a){
-            sum+=i;
-        }
+public class baitap{
+
+    public static Integer sumList(List<Integer> list){
+        Integer sum = list.stream().reduce(0,(a,b)-> a+b);
         return sum;
     }
 //    m2
     public static Pair<Integer, List<Character>> maxChar (String s){
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        Map<Character, Integer> map = new HashMap<>();
         for (Character i : s.toCharArray()){
             if (map.containsKey(i)){
                 map.put(i, map.get(i)+1);
@@ -34,19 +32,16 @@ public class baitap {
     public static List<Integer> get(int n){
         Scanner sc = new Scanner(System.in);
         List<Integer> b = new ArrayList<>();
-        for (int i = 0; i < n; i++){
-            System.out.print("nhap phan tu "+ (i+1) + ": ");
+        for (int i = 1; i <= n; i++){
+            System.out.print("nhap phan tu "+ i + ": ");
             b.add(sc.nextInt());
         }
         return b;
     }
     public static void show(List<Integer> list) {
-        for (int i : list) {
-            System.out.print(i + " ");
-        }
+        list.forEach(System.out::print);
         System.out.println();
     }
-
 //    m4
     public static boolean checkSNT(int num){
         if (num > 3){
@@ -61,14 +56,13 @@ public class baitap {
         return true;
     }
 //    m5
-    public static String dtTamGiac(int a, int b, int c) throws MyException{
+    public static float dtTamGiac(int a, int b, int c) throws MyException{
         if(a+b <= c || a+c <= b || c+b <=a ){
             throw new MyException(a,b,c);
         }
         else {
             float p = (float)(a+b+c)/2;
-            float dt = (float) Math.sqrt(p*(p-a)*(p-b)*(p-c));
-            return String.format("Dien Tich = %.2f",dt);
+            return (float) Math.sqrt(p*(p-a)*(p-b)*(p-c));
         }
     }
 //    m6
@@ -98,6 +92,7 @@ public class baitap {
             System.out.println("6.m6");
             System.out.println("7.thoat");
             int number;
+            int n;
             Scanner sc = new Scanner(System.in);
             System.out.print("select : ");
             number = sc.nextInt();
@@ -105,12 +100,8 @@ public class baitap {
             switch (number){
                 case 1:
                     System.out.print("Nhap so phan tu mang: ");
-                    int n = sc.nextInt();
-                    List<Integer> a = new ArrayList<>();
-                    for (int i = 0; i < n; i++){
-                        System.out.print("nhap phan tu "+ (i+1) + ": ");
-                        a.add(sc.nextInt());
-                    }
+                    n = sc.nextInt();
+                    List<Integer> a = get(n);
                     System.out.println("sum = " + sumList(a));
                     break;
                 case 2:
@@ -121,20 +112,21 @@ public class baitap {
                     for (Character i : rs.getValue()){
                         System.out.printf("ky tu '%s' \n",i);
                     }
-
                     break;
                 case 3:
                     System.out.print("Nhap so phan tu mang: ");
                     n = sc.nextInt();
                     List<Integer> b = get(n);
-                    System.out.println("mang truoc khi sa xep");
+                    System.out.println("mang truoc khi sap xep");
                     show(b);
                     sortASC(b);
                     System.out.println("mang sau khi sa xep");
                     show(b);
                     break;
                 case 4:
-                    System.out.println(checkSNT(9));
+                    System.out.print("Number = ");
+                    n = sc.nextInt();
+                    System.out.println(checkSNT(n));
                     break;
                 case 5:
                     try {
@@ -145,7 +137,7 @@ public class baitap {
                         System.out.print("Nhap canh 3 :");
                         int c3 = sc.nextInt();
                         try {
-                            System.out.println(dtTamGiac(c1,c2,c3));
+                            System.out.println("Dien tich = " +dtTamGiac(c1,c2,c3));
                         }catch (MyException me){
                             System.out.println("Loi: "+ me);
                         }
@@ -163,10 +155,6 @@ public class baitap {
                     break;
                 default:
             }
-//            sc.close();
-
         }
-
-
     }
 }
