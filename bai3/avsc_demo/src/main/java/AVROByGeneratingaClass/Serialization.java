@@ -1,3 +1,5 @@
+package AVROByGeneratingaClass;
+
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
@@ -38,8 +40,6 @@ public class Serialization {
         userinfo.setPhone("123456789");
         userinfo.setGenger(Gender.female);
         userinfo.setListAddress(listAddress);
-
-
 
         //Instantiate DatumWriter class
         DatumWriter<UserInfo> empDatumWriter = new SpecificDatumWriter<UserInfo>(UserInfo.class);
