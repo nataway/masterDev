@@ -15,16 +15,17 @@ import with_code_gen.UserInfo;
 public class Deserialize {
     public static void main(String args[]) throws IOException {
 
+        Path currentRelativePath = Paths.get("");
+        String s = currentRelativePath.toAbsolutePath().toString();
+        String PATH = s+"/src/main/java/FileSave/emp.avro";
+
         //DeSerializing the objects
         DatumReader<UserInfo> empDatumReader = new SpecificDatumReader<>(UserInfo.class);
 
-        Path currentRelativePath = Paths.get("");
-        String s = currentRelativePath.toAbsolutePath().toString();
         //Instantiating DataFileReader
         DataFileReader<UserInfo> dataFileReader = new DataFileReader<>(new
-                File(s+"/src/main/java/with_code_gen/emp.avro"), empDatumReader);
+                File(PATH), empDatumReader);
         UserInfo em = null;
-
 
         while(dataFileReader.hasNext()){
             em=dataFileReader.next(em);

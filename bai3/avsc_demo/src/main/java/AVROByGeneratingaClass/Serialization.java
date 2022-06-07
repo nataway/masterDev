@@ -47,7 +47,7 @@ public class Serialization {
 
         Path currentRelativePath = Paths.get("");
         String s = currentRelativePath.toAbsolutePath().toString();
-        empFileWriter.create(userinfo.getSchema(), new File(s+"/src/main/java/with_code_gen/emp.avro"));
+        empFileWriter.create(userinfo.getSchema(), new File(s+"/src/main/java/FileSave/emp.avro"));
         empFileWriter.append(userinfo);
 
         empFileWriter.close();
