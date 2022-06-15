@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "Student",
+  "namespace": "model",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name": "num_order", "type": "int"},
+    {"name": "Age", "type": "int" },
+    {"name": "tel", "type":"string"}
+  ]
+}
