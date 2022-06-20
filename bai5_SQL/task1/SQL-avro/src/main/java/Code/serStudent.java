@@ -18,9 +18,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+// class gen dữ liệu bảng CLassDê
 public class serStudent {
     public static void main(String[] args) throws IOException {
+
+//
         Path currentRelativePath = Paths.get("");
         String s = currentRelativePath.toAbsolutePath().toString();
         String PATH = s+"/src/main/java/FileSave/Subject.avro";
@@ -34,7 +36,6 @@ public class serStudent {
             Subjects em = new Subjects();
             em = dataFileReader.next(em);
             listSubject.add(em);
-//            System.out.println(em);
         }
 //        -----------------------------------
         Student student1 = new Student();
