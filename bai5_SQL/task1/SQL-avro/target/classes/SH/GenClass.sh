@@ -1,0 +1,1 @@
+java -jar /Users/buiminhchi/.m2/repository/org/apache/avro/avro-tools/1.7.7/avro-tools-1.7.7.jar compile schema  /Users/buiminhchi/GHTK/masterDev/SQL-avro/src/main/java/Schema/ClassSubject.avsc /Users/buiminhchi/GHTK/masterDev/SQL-avro/src/main/java/

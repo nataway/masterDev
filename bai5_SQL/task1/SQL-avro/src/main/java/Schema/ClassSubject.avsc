@@ -1,0 +1,40 @@
+{
+  "type": "record",
+  "name": "Subjects",
+  "namespace": "model",
+  "fields": [
+    {
+      "name": "teacher",
+      "type": "int"
+    },
+    {"name": "soluongGroup", "type": "int"},
+    {
+      "name": "SlStudent",
+      "type": "int"
+    },
+    {
+      "name": "Subject",
+      "type": "int"
+    },
+    {
+      "name": "ListNameGroup",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "NameGroup",
+          "fields": [
+            {
+              "name": "group",
+              "type": "int"
+            },
+            {
+              "name": "SlStudenr",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

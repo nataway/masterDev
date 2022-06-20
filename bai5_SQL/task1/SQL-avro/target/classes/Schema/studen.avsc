@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "Student",
+  "namespace": "model",
+  "fields": [
+    {
+      "name": "idStuden",
+      "type": "int"
+    },
+    {
+      "name": "SlSubject",
+      "type": "int"
+    },
+    {
+      "name": "ListSubject",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "NameGroupSubject",
+          "fields": [
+            {
+              "name": "NameGroup",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

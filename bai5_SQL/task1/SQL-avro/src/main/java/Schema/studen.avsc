@@ -1,0 +1,39 @@
+{
+  "type": "record",
+  "name": "Student",
+  "namespace": "model",
+  "fields": [
+    {
+      "name": "idStuden",
+      "type": "int"
+    },
+    {
+      "name": "SlSubject",
+      "type": "int"
+    },
+    {
+      "name": "ListSubject",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "NameGroupStudent",
+          "fields": [
+            {
+              "name": "class_registration",
+              "type": "int"
+            },
+            {
+              "name": "Group",
+              "type": "int"
+            },
+            {
+              "name": "score",
+              "type": "float"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
