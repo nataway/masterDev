@@ -1,56 +1,53 @@
 package Code;
 
-import com.opencsv.CSVWriter;
+import model.NameGroup;
 import model.Subjects;
-import org.apache.avro.file.DataFileReader;
-import org.apache.avro.io.DatumReader;
-import org.apache.avro.specific.SpecificDatumReader;
+import org.apache.avro.file.DataFileWriter;
+import org.apache.avro.io.DatumWriter;
+import org.apache.avro.specific.SpecificDatumWriter;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GenDataClassTable {
-
-
     public static void main(String[] args) throws IOException {
-
+        DatumWriter<Subjects> empDatumWriter = new SpecificDatumWriter<Subjects>(Subjects.class);
+        DataFileWriter<Subjects> empFileWriter = new DataFileWriter<Subjects>(empDatumWriter);
         Path currentRelativePath = Paths.get("");
+        Subjects subject = new Subjects();
         String s = currentRelativePath.toAbsolutePath().toString();
-        String PATH = s+"/src/main/java/FileSave/Subject.avro";
-        String pathcsv = s+"/src/main/java/Csv/class.csv";
-        File file = new File(pathcsv);
-        FileWriter outputfile = new FileWriter(file);
-        CSVWriter writer = new CSVWriter(outputfile,
-                CSVWriter.DEFAULT_SEPARATOR,
-                CSVWriter.NO_QUOTE_CHARACTER,
-                CSVWriter.NO_ESCAPE_CHARACTER,
-                CSVWriter.DEFAULT_LINE_END);
-        String [] header = {"idTeacher","idSubject","group"};
-        writer.writeNext(header);
-        writer.flush();
+        empFileWriter.create(subject.getSchema(), new File(s+"/src/main/java/FileSave/Subject.avro"));
 
-        DatumReader<Subjects> empDatumReader = new SpecificDatumReader<>(Subjects.class);
 
-        //Instantiating DataFileReader
-        DataFileReader<Subjects> dataFileReader = new DataFileReader<>(new
-                File(PATH), empDatumReader);
-        Subjects em = null;
-        while(dataFileReader.hasNext()){
-            em = dataFileReader.next();
+        for (int j = 1; j <= 1000; j++) {
 
-            int idTeacher = em.getTeacher();
-            int idSubject = em.getSubject();
-            for (int i = 1 ; i <= 5 ; i++){
-                String[] x = {String.valueOf(idTeacher), String.valueOf(idSubject), String.valueOf(i)};
-                writer.writeNext(x);
-                writer.flush();
+            Subjects subjects = new Subjects();
+            List<NameGroup> ListNameGroup = new ArrayList<>();
+            Random rd = new Random();
+            int id_Teacher = j;
+            int SlGroup = 5;
+            int SlStudent = 60 +rd.nextInt(100);
+            int nameSubject = 1 + rd.nextInt(200);
+            for (int i = 1; i <= SlGroup ; i++ ){
+                NameGroup nameGroup = new NameGroup();
+                nameGroup.setGroup(i);
+                nameGroup.setSlStudenr(SlStudent);
+                ListNameGroup.add(nameGroup);
             }
+            subjects.setTeacher(id_Teacher);
+            subjects.setSubject(nameSubject);
+            subjects.setSlStudent(SlStudent);
+            subjects.setSoluongGroup(SlGroup);
+            subjects.setListNameGroup(ListNameGroup);
+            empFileWriter.append(subjects);
+
         }
-        writer.close();
+        empFileWriter.close();
+        System.out.println("data successfully serialized");
     }
 }

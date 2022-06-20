@@ -1,50 +1,82 @@
 package Code;
 
-import com.opencsv.CSVWriter;
+import model.NameGroup;
 import model.NameGroupStudent;
 import model.Student;
+import model.Subjects;
 import org.apache.avro.file.DataFileReader;
+import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.io.DatumReader;
+import org.apache.avro.io.DatumWriter;
 import org.apache.avro.specific.SpecificDatumReader;
+import org.apache.avro.specific.SpecificDatumWriter;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Random;
+// class gen dữ liệu bảng CLassDê
 public class GenDataClassDetailTable {
     public static void main(String[] args) throws IOException {
 
+//
         Path currentRelativePath = Paths.get("");
         String s = currentRelativePath.toAbsolutePath().toString();
-        String PATH = s+"/src/main/java/FileSave/student.avro";
-
-        String pathcsv = s+"/src/main/java/Csv/classDetail.csv";
-        File file = new File(pathcsv);
-        FileWriter outputfile = new FileWriter(file);
-        CSVWriter writer = new CSVWriter(outputfile,
-                CSVWriter.DEFAULT_SEPARATOR,
-                CSVWriter.NO_QUOTE_CHARACTER,
-                CSVWriter.NO_ESCAPE_CHARACTER,
-                CSVWriter.DEFAULT_LINE_END);
-        String [] header = {"idClass","idStudent","score"};
-        writer.writeNext(header);
-        writer.flush();
-        DatumReader<Student> empDatumReader = new SpecificDatumReader<>(Student.class);
-        DataFileReader<Student> dataFileReader = new DataFileReader<>(new
+        String PATH = s+"/src/main/java/FileSave/Subject.avro";
+        DatumReader<Subjects> empDatumReader = new SpecificDatumReader<>(Subjects.class);
+        List<Subjects> listSubject = new ArrayList<>();
+        //Instantiating DataFileReader
+        DataFileReader<Subjects> dataFileReader = new DataFileReader<>(new
                 File(PATH), empDatumReader);
-        Student em = null;
+
         while(dataFileReader.hasNext()){
-            em = dataFileReader.next();
-            List<NameGroupStudent> listSubject = em.getListSubject();
-            for (NameGroupStudent i : listSubject){
-                String[] x = {String.valueOf(i.getClassRegistration()), String.valueOf(em.getIdStuden()), String.valueOf(i.getScore())};
-                writer.writeNext(x);
-                writer.flush();
-            }
+            Subjects em = new Subjects();
+            em = dataFileReader.next(em);
+            listSubject.add(em);
         }
-        writer.close();
+//        -----------------------------------
+        Student student1 = new Student();
+        DatumWriter<Student> DatumWriter = new SpecificDatumWriter<Student>(Student.class);
+        DataFileWriter<Student> FileWriter = new DataFileWriter<Student>(DatumWriter);
+        FileWriter.create(student1.getSchema(), new File(s+"/src/main/java/FileSave/student.avro"));
+        System.out.println("oke");
+//        -----------------------------------------
+        for (int ids = 1; ids <= 21260; ids ++){
+            List<Integer> listSubjectCheck = new ArrayList<>() ;
+            Student student = new Student();
+            List<NameGroupStudent> listGroupSubjectStudent = new ArrayList<>();
+            student.setIdStuden(ids);
+            student.setSlSubject(5);
+            int sl = 5;
+            while (sl > 0){
+                for(Subjects sj : listSubject){
+                    if (!listSubjectCheck.contains(sj.getSubject())){
+                        listSubjectCheck.add(sj.getSubject());
+                        for (NameGroup ng : sj.getListNameGroup()){
+                            if (ng.getSlStudenr() > 0){
+                                ng.setSlStudenr(ng.getSlStudenr()-1);
+                                NameGroupStudent nameGroupSubject = new NameGroupStudent();
+                                nameGroupSubject.setGroup(ng.getGroup());
+                                nameGroupSubject.setClassRegistration(sj.getSubject());
+                                listGroupSubjectStudent.add(nameGroupSubject);
+                                Random rd = new Random();
+                                nameGroupSubject.setScore((float) Math.ceil(rd.nextFloat()*10 * 100) / 100);
+                                sl -= 1;
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            student.setListSubject(listGroupSubjectStudent);
+            FileWriter.append(student);
+            System.out.println(student);
+        }
+        FileWriter.close();
+        System.out.println("data successfully serialized");
     }
 }
