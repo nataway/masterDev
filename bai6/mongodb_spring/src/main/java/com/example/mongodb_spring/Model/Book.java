@@ -6,8 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -19,10 +20,15 @@ import java.util.Date;
 public class Book implements Serializable {
     @Id
     private String id;
-    @Indexed()
+    @Field(name = "name")
+//    @TextIndexed()
     private String name;
+    @Field(name = "author")
+//    @TextIndexed()
     private String author;
+    @Field(name = "publicationDate")
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date publicationDate;
+    @Field(name = "describe")
     private String describe;
 }
