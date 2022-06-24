@@ -62,6 +62,10 @@ public class BookImpl implements BookService {
 
     @Override
     public List<Book> findBookByDate(Date start, Date end) {
+        if (start.after(end)){
+            throw new ApiException("start Date < end Date");
+
+        }
         Pageable pageable = PageRequest.of(0,5, Sort.by("publicationDate").descending());
         Page<Book> pageResult = bookRepo.findBookByPublicationDateBetween(start,end, pageable);
         return pageResult.toList();
