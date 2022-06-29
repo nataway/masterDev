@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d6a827a-9494-4d06-89ef-3ce6219bb879" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../bai3/avsc_demo/.idea/libraries/Maven__com_google_code_gson_gson_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai3/avsc_demo/.idea/libraries/Maven__org_json_json_20140107.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai3/avsc_demo/src/main/java/AVROUsingParsersLibrary/Serialization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/ant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__com_github_luben_zstd_jni_1_4_4_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__com_opencsv_opencsv_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__org_apache_avro_avro_tools_1_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__org_apache_commons_commons_text_1_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__org_apache_kafka_kafka_clients_2_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__org_lz4_lz4_java_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_1_7_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/kafka.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/ConsumerGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/JsonSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/ProducerReadCSVOriginal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/ReadCSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/Runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/SH/KafkaConsoleConsumer.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/SH/a.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/SampleProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/Schema/Student.avsc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/code/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/code/ProducerRead.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/code/ReadCsv.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/out/student.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/src/main/java/test/pro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/RegistrySchema/SchemaMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/SH/GenClass.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/SH/docker_kafka.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/SH/movefile.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/Schema/Student.avsc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/code/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/code/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/code/pro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/data/student.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/docker-compose/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka_01/src/main/java/out/student.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Config/con.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Config/con.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Controller/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Controller/userController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Exeption/DuplicateRecordException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Exeption/DuplicateRecordException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Exeption/NotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Exeption/NotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Exeption/checkAddUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Exeption/checkAddUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Implement/userImplement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Repository/userRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Repository/userRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/RestApiMasterDevApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/RestApiMasterDevApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Service/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai2/restAPI_MasterDev/target/classes/com/example/restapi_masterdev/Service/userService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/avsc_demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/avsc_demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/src/main/java/AVROByGeneratingaClass/Deserialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/src/main/java/AVROByGeneratingaClass/Deserialize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/src/main/java/FileSave/emp.avro" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/src/main/java/FileSave/emp.avro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/src/main/java/schema/emp.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/src/main/java/schema/emp.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/AVROByGeneratingaClass/Deserialize.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/AVROByGeneratingaClass/Deserialize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/AVROByGeneratingaClass/Serialization.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/AVROByGeneratingaClass/Serialization.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/Address$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/Address$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/Address$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/Gender.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/Gender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/UserInfo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/UserInfo$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/UserInfo$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai3/avsc_demo/target/classes/with_code_gen/UserInfo.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2AYMyhAKqsrcZc2ihlNrIaKfUlC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/buiminhchi/GHTK/masterDev/bai4"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d6a827a-9494-4d06-89ef-3ce6219bb879" name="Changes" comment="" />
+      <created>1655182322299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655182322299</updated>
+      <workItem from="1655182323612" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
