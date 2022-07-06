@@ -49,14 +49,18 @@ public class Run {
         public void map(LongWritable key, Text value, Context context)
                 throws IOException, InterruptedException {
             String[] recordFields = value.toString().split(",");
-            String job = recordFields[0];
-            String salary = recordFields[1];
+            if (!Objects.equals(recordFields[0], "job")){
 
-            JobKey recordKey = new JobKey(job, JobKey.SALARY_RECORD);
-            SalaryRecord record = new SalaryRecord(salary);
+                String job = recordFields[0];
+                String salary = recordFields[1];
 
-            JoinGenericWritable genericRecord = new JoinGenericWritable(record);
-            context.write(recordKey, genericRecord);
+                JobKey recordKey = new JobKey(job, JobKey.SALARY_RECORD);
+                SalaryRecord record = new SalaryRecord(salary);
+
+                JoinGenericWritable genericRecord = new JoinGenericWritable(record);
+                context.write(recordKey, genericRecord);
+            }
+
         }
     }
 
@@ -65,38 +69,44 @@ public class Run {
         public void map(LongWritable key, Text value, Context context)
                 throws IOException, InterruptedException {
             String[] recordFields = value.toString().split(",");
-            int id = Integer.parseInt(recordFields[0]);
-            String first_name = recordFields[1];
-            String last_name = recordFields[2];
-            int  age = Integer.parseInt(recordFields[3]);
-            String state = recordFields[4];
-            String city = recordFields[5];
-            String street = recordFields[6];
-            int  zip = Integer.parseInt(recordFields[7]);
-            String job = recordFields[8];
+            if (!Objects.equals(recordFields[0], "id")){
+                int id = Integer.parseInt(recordFields[0]);
+                String first_name = recordFields[1];
+                String last_name = recordFields[2];
+                int  age = Integer.parseInt(recordFields[3]);
+                String state = recordFields[4];
+                String city = recordFields[5];
+                String street = recordFields[6];
+                int  zip = Integer.parseInt(recordFields[7]);
+                String job = recordFields[8];
 
-            JobKey recordKey = new JobKey(job, JobKey.PEOPLE_RECORD);
-            PeopleRecord record = new PeopleRecord(id,first_name,last_name,age,street,city,state,zip);
+                JobKey recordKey = new JobKey(job, JobKey.PEOPLE_RECORD);
+                PeopleRecord record = new PeopleRecord(id,first_name,last_name,age,street,city,state,zip);
 
-            JoinGenericWritable genericRecord = new JoinGenericWritable(record);
-            context.write(recordKey, genericRecord);
-
+                JoinGenericWritable genericRecord = new JoinGenericWritable(record);
+                context.write(recordKey, genericRecord);
+            }
         }
     }
 
     public static class JoinReducer extends Reducer<JobKey,
             JoinGenericWritable, NullWritable, Text> {
+        StringBuilder output = new StringBuilder();
+
+
+        @Override
+        protected void setup(Reducer<JobKey, JoinGenericWritable, NullWritable, Text>.Context context) throws IOException, InterruptedException {
+            output.append("id,first_name,last_name,age,street,city,state,zip,job,salary \n");
+        }
+
         public void reduce(JobKey key, Iterable<JoinGenericWritable> values,
                            Context context) throws IOException, InterruptedException{
-            StringBuilder output = new StringBuilder();
             String salary = null;
-            output.append("id,first_name,last_name,age,street,city,state,zip,job,salary \n");
             for (JoinGenericWritable v : values) {
                 Writable record = v.get();
                 if (key.nameTable.equals(JobKey.SALARY_RECORD)){
                     SalaryRecord record2 = (SalaryRecord) record;
                     salary = record2.salary.toString();
-
                 } else {
                     PeopleRecord pRecord = (PeopleRecord) record;
                     output.append(pRecord.id.toString()).append(", ");
@@ -109,13 +119,14 @@ public class Run {
                     output.append(pRecord.zip.toString()).append(", ");
                     output.append(key.jobKey.toString()).append(", ");
                     output.append(salary).append("\n");
-
                 }
             }
 
-            if (output.length() != 0){
-                context.write(NullWritable.get(), new Text(output.toString()));
-            }
+        }
+
+        @Override
+        protected void cleanup(Reducer<JobKey, JoinGenericWritable, NullWritable, Text>.Context context) throws IOException, InterruptedException {
+            context.write(NullWritable.get(), new Text(output.toString()));
         }
     }
 
@@ -147,7 +158,7 @@ public class Run {
 
 
         job.setReducerClass(JoinReducer.class);
-//        job.setNumReduceTasks();
+        job.setNumReduceTasks(2);
 
         job.setOutputKeyClass(NullWritable.class);
         job.setOutputValueClass(Text.class);
