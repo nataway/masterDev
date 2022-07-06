@@ -135,7 +135,10 @@ public class Run {
 
         String[] allArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
         if ((allArgs.length != 3)) {
-            System.err.println("Usage: </chibm/bai3/input/salary.csv> </chibm/bai3/input/salary.csv> <output>");
+            System.err.println("Usage: <input salary.csv> < input people.csv> <output>");
+            System.err.println("Usage: using on hadoop" +
+                    "</chibm/bai3/input/salary.csv> </chibm/bai3/input/salary.csv> <output>");
+
             System.exit(2);
         }
 
