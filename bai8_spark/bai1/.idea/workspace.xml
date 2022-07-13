@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="bai1:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c8b6b427-cdf7-403a-a175-58096b30c32d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../NhiemThu_Haddoop/~$Hadoop.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/bai3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/bai3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/src/main/java/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/src/main/java/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinGroupingComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinGroupingComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinReducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinReducer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinSortingComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinSortingComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$peopleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$peopleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$salaryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$salaryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WordCount/input/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WordCount/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WordCount/src/main/java/XXX.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2BmX415dbDKLhikh7xi6L3w8Vpo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user/chibm/input" />
+      <recent name="$PROJECT_DIR$/input/data" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn p" />
+      <command value="mvn package" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="bai1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bai1" />
+      <module name="bai1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.bai1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8b6b427-cdf7-403a-a175-58096b30c32d" name="Changes" comment="" />
+      <created>1657512039406</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657512039406</updated>
+      <workItem from="1657512041838" duration="13245000" />
+      <workItem from="1657543403191" duration="21257000" />
+      <workItem from="1657629020483" duration="6561000" />
+      <workItem from="1657680305159" duration="1964000" />
+      <workItem from="1657683254707" duration="1117000" />
+      <workItem from="1657686813679" duration="783000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
