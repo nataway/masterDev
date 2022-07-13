@@ -1,37 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="bai1:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8b6b427-cdf7-403a-a175-58096b30c32d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../NhiemThu_Haddoop/~$Hadoop.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/bai3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/bai3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/src/main/java/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/src/main/java/Run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinGroupingComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinGroupingComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinReducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinReducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinSortingComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$JoinSortingComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$peopleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$peopleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$salaryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run$salaryMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_Hadoop/bai3/target/classes/Run.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WordCount/input/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WordCount/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WordCount/src/main/java/XXX.java" beforeDir="false" />
+    <list default="true" id="553c9aa2-4e85-4cd4-abdd-4dd8d2f60c2e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bai1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/chibm/input/part1.snappy.parquet" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/chibm/input/part2.snappy.parquet" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
@@ -52,36 +36,32 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectId" id="2BmX415dbDKLhikh7xi6L3w8Vpo" />
+  <component name="ProjectId" id="2BsU4uNQhldrCgzybfIoVW4laPG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/buiminhchi/GHTK/masterDev/bai8_spark/bai1/user/chibm/input",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/user/chibm/input" />
-      <recent name="$PROJECT_DIR$/input/data" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn p" />
       <command value="mvn package" />
     </option>
   </component>
@@ -102,17 +82,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c8b6b427-cdf7-403a-a175-58096b30c32d" name="Changes" comment="" />
-      <created>1657512039406</created>
+      <changelist id="553c9aa2-4e85-4cd4-abdd-4dd8d2f60c2e" name="Changes" comment="" />
+      <created>1657694098231</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1657512039406</updated>
-      <workItem from="1657512041838" duration="13245000" />
-      <workItem from="1657543403191" duration="21257000" />
-      <workItem from="1657629020483" duration="6561000" />
-      <workItem from="1657680305159" duration="1964000" />
-      <workItem from="1657683254707" duration="1117000" />
-      <workItem from="1657686813679" duration="783000" />
+      <updated>1657694098231</updated>
+      <workItem from="1657694099435" duration="3097000" />
     </task>
     <servers />
   </component>
