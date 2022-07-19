@@ -1,8 +1,7 @@
 package serializers;
 
 import com.google.protobuf.Message;
-import com.google.protobuf.MessageLite;
-import java.util.Map;
+import io.confluent.kafka.schemaregistry.client.SchemaRegistryClient;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer;
 
 /**
@@ -15,4 +14,6 @@ public class KafkaSerializer<T extends Message> extends KafkaProtobufSerializer<
     public byte[] serialize(String topic, T record) {
         return record.toByteArray();
     }
+
+
 }
