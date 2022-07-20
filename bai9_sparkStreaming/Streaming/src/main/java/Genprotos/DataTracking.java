@@ -21,10 +21,13 @@ private static final long serialVersionUID = 0L;
     phoneId_ = "";
   }
 //  @Override
-  public java.lang.String toString1() {
+  public String toString1() {
     return this.getVersion() + ","+
             this.getName() +","+
-            this.getTimestamp() + ","+
+            String.valueOf(this.getTimestamp()).substring(0,4) + ","+
+            String.valueOf(this.getTimestamp()).substring(4,6) + ","+
+            String.valueOf(this.getTimestamp()).substring(6,8) + ","+
+            String.valueOf(this.getTimestamp()).substring(8,10) + ","+
             this.getPhoneId() + ","+
             this.getLon() + ","+
             this.getLat();

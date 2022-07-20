@@ -12,17 +12,18 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 public class ProducerKafkaProto {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         String topicName = "chibm_test";
         Properties props = new Properties();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "172.17.80.21:9092");
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.193.104:9092");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringSerializer");
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
                 "serializers.KafkaSerializer");
-        props.put("schema.registry.url", "http://172.17.80.21:8081");
+        props.put("schema.registry.url", "http://192.168.193.104:8081");
         Faker faker = new Faker();
         Producer<String, DataTracking> producer = new KafkaProducer<String, DataTracking>(props);
 
@@ -33,6 +34,7 @@ public class ProducerKafkaProto {
 //        producer.close();
 
         while (true){
+            TimeUnit.SECONDS.sleep(15);
             ProducerRecord<String, DataTracking> record
                     = new ProducerRecord<String, DataTracking>(topicName, key, getDataTracking(faker));
             producer.send(record);
