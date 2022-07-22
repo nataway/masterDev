@@ -31,7 +31,7 @@ public class SparkStream3 {
                 .getOrCreate();
 
         UserDefinedFunction strLen = udf(
-                ( byte[] x) -> new KafkaDeserializer<>(DataTracking.parser()).deserialize("chibm_test",x).toString1(),
+                ( byte[] x) -> new KafkaDeserializer<>(DataTracking.parser()).deserialize("kafka_data_tracking_chibm",x).toString1(),
                 DataTypes.StringType);
 
         spark.udf().register("strLen", strLen);
@@ -41,8 +41,8 @@ public class SparkStream3 {
         Dataset<Row> df = spark
                 .readStream()
                 .format("kafka")
-                .option("kafka.bootstrap.servers", "172.17.80.20:9092")
-                .option("subscribe", "chibm_test")
+                .option("kafka.bootstrap.servers", "172.17.80.26:9092")
+                .option("subscribe", "kafka_data_tracking_chibm")
                 .option("group.id","group1")
                 .option("startingOffsets","earliest")
 //                .option("auto.offset.reset","true")
@@ -64,8 +64,6 @@ public class SparkStream3 {
                         col("partition"),
                         col("offset"));
 
-
-
 //        df.map((MapFunction<Row, Row>) row -> {
 //                    accum.add(1);
 //                    return  row;
@@ -83,8 +81,8 @@ public class SparkStream3 {
                 .outputMode("append")
                 .format("parquet")
 //                .option("compression","snappy")
-                .option("checkpointLocation", "/chibm/Kafspark/checkpoint")
-                .option("path", "/chibm/Kafspark/output")
+                .option("checkpointLocation", "/user/chibm/checkpoint")
+                .option("path", "/user/chibm/data_tracking")
                 .partitionBy("year", "month","day", "hour")
                 .trigger(Trigger.ProcessingTime(5000))
                 .start();
