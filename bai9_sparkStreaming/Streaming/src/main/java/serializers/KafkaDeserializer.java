@@ -4,9 +4,9 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 
 import com.google.protobuf.Parser;
-import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer;
+import org.apache.kafka.common.serialization.Deserializer;
 
-public class KafkaDeserializer<T extends Message> extends KafkaProtobufDeserializer<T> {
+public class KafkaDeserializer<T extends Message> implements Deserializer<T> {
     private final Parser<T> parser;
 
     public KafkaDeserializer(Parser<T> parser) {

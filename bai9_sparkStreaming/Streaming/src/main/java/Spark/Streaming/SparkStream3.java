@@ -11,42 +11,45 @@ import org.apache.spark.sql.streaming.StreamingQuery;
 import org.apache.spark.sql.streaming.StreamingQueryException;
 import org.apache.spark.sql.streaming.Trigger;
 import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.StructType;
+import org.apache.spark.util.LongAccumulator;
 import serializers.KafkaDeserializer;
 
-//import org.apache.spark.sql.connector.read.streaming.SupportsTriggerAvailableNow;
-
+import java.util.HashMap;
 import java.util.concurrent.TimeoutException;
 
-import static org.apache.spark.sql.functions.*;
-
+import static org.apache.spark.sql.functions.udf;
+import static org.apache.spark.sql.functions.col;
+import static org.apache.spark.sql.functions.split;
 public class SparkStream3 {
 
-
-
-    public static void main(String[] args) throws StreamingQueryException, TimeoutException {
+    public static void main(String[] args) throws StreamingQueryException {
 
         SparkSession spark = SparkSession
                 .builder()
-                .appName("Spark Kafka Integration using Structured Streaming")
-                .master("local")
+                .appName("Spark Kafka Integration using Structured Streaming chibm")
+//                .master("local")
                 .getOrCreate();
 
         UserDefinedFunction strLen = udf(
                 ( byte[] x) -> new KafkaDeserializer<>(DataTracking.parser()).deserialize("chibm_test",x).toString1(),
                 DataTypes.StringType);
+
         spark.udf().register("strLen", strLen);
+//        LongAccumulator accum = spark.sparkContext().longAccumulator("accum");
+//        HashMap<String, LongAccumulator> accumulatorHashMap = new HashMap<>();
+
         Dataset<Row> df = spark
                 .readStream()
                 .format("kafka")
-                .option("kafka.bootstrap.servers", "192.168.193.104:9092")
+                .option("kafka.bootstrap.servers", "172.17.80.20:9092")
                 .option("subscribe", "chibm_test")
                 .option("group.id","group1")
                 .option("startingOffsets","earliest")
-                .option("auto.offset.reset","true")
+//                .option("auto.offset.reset","true")
                 .load();
-        Dataset<Row> df1 = df.selectExpr("CAST(key as string)","strLen(value) as value", "CAST(topic as STRING)",
-                "CAST(offset as long)", "CAST(partition as long)")
+
+        Dataset<Row> df1 = df.selectExpr("CAST(key as string)","strLen(value) as value", "topic",
+                "offset", "partition")
                 .select(col("key"),
                         split(col("value"),",").getItem(0).as("version"),
                         split(col("value"),",").getItem(1).as("Name"),
@@ -60,21 +63,32 @@ public class SparkStream3 {
                         col("topic"),
                         col("partition"),
                         col("offset"));
-//        df1.show();
 
+
+
+//        df.map((MapFunction<Row, Row>) row -> {
+//                    accum.add(1);
+//                    return  row;
+//                }, RowEncoder.apply(df.schema()))
+//                .count();
+//
+//        System.out.println(accum.value());
+//        df1.foreach();
+//        df1.show();
 //        Dataset<Row> DF = df;
 
         //.printSchema();
-        df1.writeStream()
-                .option("partition",1)
+        StreamingQuery query = df1.writeStream()
+//                .option("partition",1)
                 .outputMode("append")
                 .format("parquet")
-                .option("compression","snappy")
-                .option("checkpointLocation", "checkpoint")
-                .option("path", "chibm")
+//                .option("compression","snappy")
+                .option("checkpointLocation", "/chibm/Kafspark/checkpoint")
+                .option("path", "/chibm/Kafspark/output")
                 .partitionBy("year", "month","day", "hour")
+                .trigger(Trigger.ProcessingTime(5000))
                 .start();
-//
-        spark.streams().awaitAnyTermination();
+        query.awaitTermination();
+//        spark.streams().awaitAnyTermination();
     }
 }
