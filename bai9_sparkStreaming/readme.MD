@@ -18,6 +18,10 @@ hdfs://172.17.80.21:9000/user/chibm/data_tracking
 ```
 
 Câu lệnh spark-submit: trên server 172.17.80.21 trong folder /home/hadoop/chibm/Kafspark
+```bash
 chay file spark-kafka.sh
+```
 hoac chay cau lenh 
+```bash
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.0,com.google.protobuf:protobuf-java:3.15.8 --deploy-mode cluster --class Spark.Streaming.SparkStream3 streaming-1.0-SNAPSHOT.jar
+```
