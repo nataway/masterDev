@@ -12,8 +12,10 @@ folder serializers chua KafkaDeserializer: giai ma mess khi nhan dc tu kafka, Ka
 
 
 Producer sinh dữ liệu đẩy lên kafka topic data_tracking_chibm trên server 172.17.80.23
+```bash
 hdfs://172.17.80.21:9000/user/chibm/checkpoint
 hdfs://172.17.80.21:9000/user/chibm/data_tracking
+```
 
 Câu lệnh spark-submit: trên server 172.17.80.21 trong folder /home/hadoop/chibm/Kafspark
 chay file spark-kafka.sh
