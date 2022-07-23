@@ -36,4 +36,5 @@ CREATE TABLE IF NOT EXISTS chibm.data_tracking_2022_22 (key STRING, version STRI
 ```
 hive> SELECT * FROM chibm.data_tracking_2022_22;
 ```
+![alt text](https://drive.google.com/drive/u/0/my-drive)
 
