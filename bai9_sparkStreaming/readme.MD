@@ -30,7 +30,7 @@ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.0,com.goo
 
 tao bang tren hive voi database  chibm:
 ```
-CREATE TABLE IF NOT EXISTS chibm.data_tracking_2022_22 (key STRING, version STRING, Name STRING, year STRING, month STRING, day STRING, hour STRING, PhoneID STRING, Lon STRING, lat STRING, `topic` STRING, `partition` INTEGER, `offset` BIGINT ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS PARQUET LOCATION "/user/chibm/data_tracking/year=2022/month=07/day=22/hour=21";
+CREATE TABLE IF NOT EXISTS chibm.data_tracking_2022_22 (key STRING, version STRING, Name STRING, PhoneID STRING, Lon STRING, lat STRING, `topic` STRING, `partition` INTEGER, `offset` BIGINT ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS PARQUET LOCATION "/user/chibm/data_tracking/year=2022/month=07/day=22/hour=21";
 ```
 >query ở trên table vừa tạo
 ```
