@@ -25,3 +25,15 @@ hoac chay cau lenh
 ```bash
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.0,com.google.protobuf:protobuf-java:3.15.8 --deploy-mode cluster --class Spark.Streaming.SparkStream3 streaming-1.0-SNAPSHOT.jar
 ```
+
+> HIVE : server 21 user hadoop
+
+tao bang tren hive voi database  chibm:
+```
+CREATE TABLE IF NOT EXISTS chibm.data_tracking_2022_22 (key STRING, version STRING, Name STRING, year STRING, month STRING, day STRING, hour STRING, PhoneID STRING, Lon STRING, lat STRING, `topic` STRING, `partition` INTEGER, `offset` BIGINT ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS PARQUET LOCATION "/user/chibm/data_tracking/year=2022/month=07/day=22/hour=21";
+```
+>query ở trên table vừa tạo
+```
+hive> SELECT * FROM chibm.data_tracking_2022_22;
+```
+
