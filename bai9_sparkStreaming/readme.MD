@@ -36,5 +36,5 @@ CREATE TABLE IF NOT EXISTS chibm.data_tracking_2022_22 (key STRING, version STRI
 ```
 hive> SELECT * FROM chibm.data_tracking_2022_22;
 ```
-![image](https://drive.google.com/file/d/1cWrjBJXrU0NnrupAwkgHbSY0wUTRxliG/view?usp=sharing)
+
 
