@@ -1,3 +1,0 @@
-v1
-{"path":"file:///Users/buiminhchi/GHTK/masterDev/bai9_sparkStreaming/Streaming/chibm/Kafspark/output/year=2022/month=07/day=22/hour=09/part-00000-0ef27a53-f7ce-42e0-8479-f290830f4cd7.c000.snappy.parquet","size":24166,"isDir":false,"modificationTime":1658462545000,"blockReplication":1,"blockSize":33554432,"action":"add"}
-{"path":"file:///Users/buiminhchi/GHTK/masterDev/bai9_sparkStreaming/Streaming/chibm/Kafspark/output/year=2022/month=07/day=22/hour=10/part-00000-f64c411f-06f6-445b-be9c-50ab68521d0c.c000.snappy.parquet","size":26892,"isDir":false,"modificationTime":1658462545000,"blockReplication":1,"blockSize":33554432,"action":"add"}

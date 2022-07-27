@@ -1,0 +1,13 @@
+[Unit]
+Description=Airflow daemon
+[Service]
+User=hadoop
+#Group=airflow
+EnvironmentFile=/etc/environment
+Type=simple
+ExecStart=/usr/local/bin/airflow 'scheduler'
+Restart=on-failure
+RestartSec=5s
+PrivateTmp=true
+[Install]
+WantedBy=multi-user.target
