@@ -87,7 +87,7 @@ GET dantri/_search
 curl -s -H "Content-Type: application/json" -XPOST 172.17.80.25:9200/_bulk --data-binary @out.json
 
 - Search bằng query DSL:
-
+```
 {
     "suggest": {
         "title-suggest" : {
@@ -100,3 +100,4 @@ curl -s -H "Content-Type: application/json" -XPOST 172.17.80.25:9200/_bulk --dat
         }
     }
 }
+```
