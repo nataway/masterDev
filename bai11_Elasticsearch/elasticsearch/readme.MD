@@ -1,4 +1,4 @@
-bai1 :
+##bai1 :
 ```
 GET dantri/_search
 {
@@ -37,5 +37,31 @@ GET dantri/_search
             ]
         }
     }
+}
+```
+
+##bai 2:
+```
+GET dantri/_search
+{
+    "query": {
+        "bool" : {
+            "must" : {
+                "prefix": {
+                "title.keyword": "Hà Nội"
+            }
+            },
+            "must_not" :{
+                "match_phrase": {
+                    "description": {
+                        "query": "Hà Nội"
+                    }
+                }
+            }
+        }
+    },
+    "sort" : [
+        { "time" : "desc" }
+    ]
 }
 ```
