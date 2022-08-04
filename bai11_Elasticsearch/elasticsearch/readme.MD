@@ -1,4 +1,4 @@
-##bai1 :
+> bai1 :
 ```
 GET dantri/_search
 {
@@ -40,7 +40,7 @@ GET dantri/_search
 }
 ```
 
-##bai 2:
+> bai 2:
 ```
 GET dantri/_search
 {
