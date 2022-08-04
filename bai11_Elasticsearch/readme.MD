@@ -1,3 +1,7 @@
+> kibana 
+```
+http://172.17.80.25:5601
+```
 ## bai1 :
 ```
 GET dantri/_search
