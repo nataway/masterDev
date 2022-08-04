@@ -1,4 +1,5 @@
 bai1 :
+```
 GET dantri/_search
 {
     "query": {
@@ -37,3 +38,4 @@ GET dantri/_search
         }
     }
 }
+```
