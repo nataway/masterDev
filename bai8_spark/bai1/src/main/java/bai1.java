@@ -37,7 +37,7 @@ public class bai1 {
                 "FROM global_temp.data " +
                 "GROUP BY device_model";
         TYPEOUT = "parquet";
-        OUTPUT = "/user/chibm/device_model_num_user/small";
+        OUTPUT = "s/device_model_num_user/small";
         RUN(spark, SQL, TYPEOUT, OUTPUT);
 
 

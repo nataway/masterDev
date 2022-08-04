@@ -18,14 +18,14 @@ public class ReadkafkaProto {
     public static void main(String[] args) throws IOException {
         Properties props = new Properties();
 
-        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "172.17.80.26:9092");
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "group1");
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.193.235:9092");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "group2");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "serializers.KafkaDeserializer");
-        props.put("schema.registry.url", "http://172.17.80.26:8081");
+        props.put("schema.registry.url", "http://192.168.193.235:8081");
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
-        String topic = "kafka_data_tracking_chibm";
+        String topic = "data_tracking_chibm";
         final Consumer<String, DataTracking> consumer = new KafkaConsumer<String, DataTracking>(props,
                 new StringDeserializer(),
                 new KafkaDeserializer<>(DataTracking.parser()));

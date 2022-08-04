@@ -1,4 +1,4 @@
-bai1 :
+> bai1 :
 ```
 GET dantri/_search
 {
@@ -40,4 +40,32 @@ GET dantri/_search
 }
 ```
 
+<<<<<<< HEAD
 
+=======
+> bai 2:
+```
+GET dantri/_search
+{
+    "query": {
+        "bool" : {
+            "must" : {
+                "prefix": {
+                "title.keyword": "Hà Nội"
+            }
+            },
+            "must_not" :{
+                "match_phrase": {
+                    "description": {
+                        "query": "Hà Nội"
+                    }
+                }
+            }
+        }
+    },
+    "sort" : [
+        { "time" : "desc" }
+    ]
+}
+```
+>>>>>>> ad3fd3c53dff1280e6afa9d98ce7de01ec63f0cb

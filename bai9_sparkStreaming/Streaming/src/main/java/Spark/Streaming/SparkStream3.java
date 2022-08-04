@@ -2,10 +2,12 @@ package Spark.Streaming;
 
 import Genprotos.DataTracking;
 
+import org.apache.spark.api.java.function.MapFunction;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
+import org.apache.spark.sql.catalyst.encoders.RowEncoder;
 import org.apache.spark.sql.expressions.UserDefinedFunction;
 import org.apache.spark.sql.streaming.StreamingQuery;
 import org.apache.spark.sql.streaming.StreamingQueryException;
@@ -27,11 +29,11 @@ public class SparkStream3 {
         SparkSession spark = SparkSession
                 .builder()
                 .appName("Spark Kafka Integration using Structured Streaming chibm")
-//                .master("local")
+                .master("local")
                 .getOrCreate();
 
         UserDefinedFunction strLen = udf(
-                ( byte[] x) -> new KafkaDeserializer<>(DataTracking.parser()).deserialize("kafka_data_tracking_chibm",x).toString1(),
+                ( byte[] x) -> new KafkaDeserializer<>(DataTracking.parser()).deserialize("data_tracking_chibm",x).toString1(),
                 DataTypes.StringType);
 
         spark.udf().register("strLen", strLen);
@@ -39,10 +41,10 @@ public class SparkStream3 {
 //        HashMap<String, LongAccumulator> accumulatorHashMap = new HashMap<>();
 
         Dataset<Row> df = spark
-                .readStream()
+                .read()
                 .format("kafka")
-                .option("kafka.bootstrap.servers", "172.17.80.26:9092")
-                .option("subscribe", "kafka_data_tracking_chibm")
+                .option("kafka.bootstrap.servers", "192.168.193.235:9092")
+                .option("subscribe", "data_tracking_chibm")
                 .option("group.id","group1")
                 .option("startingOffsets","earliest")
 //                .option("auto.offset.reset","true")
@@ -75,18 +77,18 @@ public class SparkStream3 {
 //        df1.show();
 //        Dataset<Row> DF = df;
 
-        //.printSchema();
-        StreamingQuery query = df1.writeStream()
-//                .option("partition",1)
-                .outputMode("append")
-                .format("parquet")
-//                .option("compression","snappy")
-                .option("checkpointLocation", "/user/chibm/checkpoint")
-                .option("path", "/user/chibm/data_tracking")
-                .partitionBy("year", "month","day", "hour")
-                .trigger(Trigger.ProcessingTime(5000))
-                .start();
-        query.awaitTermination();
+        df1.printSchema();
+//        StreamingQuery query = df1.writeStream()
+////                .option("partition",1)
+//                .outputMode("append")
+//                .format("parquet")
+////                .option("compression","snappy")
+//                .option("checkpointLocation", "/chibm/checkpoint1")
+//                .option("path", "/chibm/data_tracking1")
+//                .partitionBy("year", "month","day", "hour")
+//                .trigger(Trigger.ProcessingTime(5000))
+//                .start();
+//        query.awaitTermination();
 //        spark.streams().awaitAnyTermination();
     }
 }

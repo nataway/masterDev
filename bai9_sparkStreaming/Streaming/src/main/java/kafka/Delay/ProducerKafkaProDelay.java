@@ -19,12 +19,12 @@ public class ProducerKafkaProDelay {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         String topicName = "chibm_test";
         Properties props = new Properties();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.193.104:9092");
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.193.235:9092");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringSerializer");
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
                 "serializers.KafkaSerializer");
-        props.put("schema.registry.url", "http://192.168.193.104:8081");
+        props.put("schema.registry.url", "http://192.168.193.235:8081");
         Faker faker = new Faker();
         Producer<String, DataTracking> producer = new KafkaProducer<String, DataTracking>(props);
 
