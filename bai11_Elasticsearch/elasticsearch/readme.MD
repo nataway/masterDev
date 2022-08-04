@@ -40,9 +40,6 @@ GET dantri/_search
 }
 ```
 
-<<<<<<< HEAD
-
-=======
 > bai 2:
 ```
 GET dantri/_search
@@ -68,4 +65,3 @@ GET dantri/_search
     ]
 }
 ```
->>>>>>> ad3fd3c53dff1280e6afa9d98ce7de01ec63f0cb
