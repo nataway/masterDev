@@ -1,7 +1,7 @@
 [Unit]
 Description=Airflow daemon
 [Service]
-User=hadoop
+User=chibm
 #Group=airflow
 EnvironmentFile=/etc/environment
 Type=simple
